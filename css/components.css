@@ -1,0 +1,618 @@
+@import url(./reset.css);
+@import url(https://fonts.googleapis.com/css?family=Space+Mono:regular,700);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:regular,600,700);
+
+
+body{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: white;
+    background-color: var(--bc-color);
+}
+
+.body__wraper{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.container{
+    max-width: 1080px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+.none{
+    display: none;
+}
+
+
+:root{
+    --bc-color: #2B2B2B;
+    --secondary-color: #3B3B3B;
+    --caption-color: #858584;
+    --action-color: #A259FF;
+
+    --ff-space-mono: 'Space Mono', monospace;
+
+    --fz-h1: 67px;
+    --fz-h2: 51px;
+    --fz-h3: 38px;
+    --fz-h4: 28px;
+    --fz-h5: 22px;
+    --fz-caption: 12px;
+}
+
+
+.btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 10px 48px;
+    border-radius: 20px;
+
+    border: 2px solid var(--action-color);
+
+    background-color: var(--action-color);
+
+    font-weight: 600;
+    line-height: 1.4;
+
+    transition: filter 0.3s;
+}
+
+.btn:hover{
+    filter: brightness(120%)
+}
+
+.btn:active{
+    filter: brightness(90%)
+}
+
+.btn__img {
+    width: 20px;
+    height: 20px;
+}
+/* Модификатор */
+
+.btn_black{
+    background-color: transparent;
+    border: 2px solid var(--action-color);
+}
+
+.btn_black:hover{
+    filter: brightness(200%);
+}
+
+.btn_black:active{
+    filter: brightness(80%);
+}
+
+
+.btn_prim{
+    font-size: var(--fz-h5);
+
+    padding-top: 18.5px;
+    padding-bottom: 18.5px;
+}
+
+.btn_sec{
+    padding-top: 17px;
+    padding-bottom: 17px;
+}
+
+
+/* ---------------------logo------------------------------- */
+
+.logo{
+    display: block;
+    transition: filter 0.3s;
+}
+
+.logo:hover{
+    filter: brightness(120%);
+}
+
+.logo:active{
+    filter: brightness(90%);
+}
+
+/* -----------------------------Меню--------------------------- */
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.menu__list {
+    display: flex;
+    gap: 30px;
+}
+
+.menu__link {
+    font-weight: 600;
+    color: white;
+    transition: color 0.3s, filter 0.3s;
+}
+
+.menu__link:hover{
+    color: var(--action-color);
+}
+
+.menu__link:active{
+    filter: brightness(90%);
+}
+
+.menu__btn {
+    padding: 19px 30px;
+}
+
+
+/* ---------------------subtitle----------------------- */
+
+.subtitle{
+    font-size: var(--fz-h3);
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+
+/* ---------------------------Collection Card----------------------- */
+
+.collection-card {
+    background-color: var(--bc-color);
+    border-radius: 22px;
+    overflow: hidden;
+}
+
+.collection-card a{
+    transition: filter 0.3s;
+}
+
+.collection-card a:hover{
+    filter: brightness(120%);
+}
+
+.collection-card a:active{
+    filter: brightness(90%);
+}
+
+.collection-card__img-primary {
+    border-radius: 22px;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.collection-card__secondary-block {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.collection-card__secondary-img {
+    border-radius: 22px;
+}
+
+.collection-card__additional {
+    position: relative;
+    
+    border-radius: 20px;
+    background-color: var(--action-color);
+}
+
+.collection-card__additional a{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-family: var(--ff-space-mono);
+    font-weight: 700;
+    color: white;
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+}
+
+.collection-card__title {
+    font-size: var(--fz-h5);
+    font-weight: 600;
+    line-height: 1.4;
+
+    margin-bottom: 15px;
+}
+
+.collection-card__artist {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+}
+.collection-card__artist-img {
+    width: 24px;
+    height: 24px;
+}
+.collection-card__artist-name {
+    line-height: 1.4;
+}
+
+
+/* ------------------------artist-card----------------------------- */
+
+.artist-card{
+    position: relative;
+    background-color: var(--secondary-color);
+
+    text-align: center;
+    border-radius: 20px;
+}
+
+.artist-card::before {
+    content: attr(data-namder);
+    position: absolute;
+    display: block;
+
+    background-color: var(--bc-color);
+    border-radius: 50%;
+
+    padding: 4px 10px;
+
+    font-family: var(--ff-space-mono);
+    line-height: 1.4;
+    color: var(--caption-color);
+
+    top: 18px;
+    left: 20px;    
+}
+
+.artist-card__img {
+    padding-top: 20px;
+    width: 110px;
+}
+
+.artist-card__title {
+    margin-bottom: 5px;
+
+    font-size: var(--fz-h5);
+    color: white;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.artist-card__desc {
+    padding: 20px;
+    color: white;
+}
+
+.artist-card__subtitle {
+    line-height: 1.4;
+    color: var(--caption-color);
+    margin-right: 10px;
+}
+
+.artist-card__sales {
+    line-height: 1.4;
+    font-family: var(--ff-space-mono);
+    font-weight: 400;
+}
+
+
+/* --------------------------category-card----------------------------- */
+.gri{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.categ-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+
+    transition: filter 0.3s;
+}
+
+.categ-card:hover{
+    filter: brightness(80%);
+}
+
+.categ-card__icon{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    width: 100px;
+    height: 100px;
+}
+
+
+.categ-card__img {
+    filter: blur(3px);
+    z-index: -1;
+}
+
+.categor-card__title {
+    background-color: var(--secondary-color);
+
+    padding: 20px 30px 25px 30px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+
+/* -----------------------NFT-card-------------------------- */
+
+.nft-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.nft-card__img {
+    width: 100%;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
+    object-fit: contain;
+}
+
+.nft-card__body {
+    background-color: var(--secondary-color);
+
+    padding: 20px 30px 25px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.nft-card__body-top {
+    margin-bottom: 25px;
+}
+
+.nft-card__title {
+    font-size: var(--fz-h5);
+    line-height: 1.4;
+    font-weight: 600;
+}
+
+.nft-card__artist {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.nft-card__artist-img {
+    width: 24px;
+    height: 24px;
+}
+
+.nft-card__artist-name {
+    line-height: 1.4;
+    font-family: var(--ff-space-mono);
+}
+
+.nft-card__body-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nft-card__price-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nft-card__subtitle {
+    font-family: var(--ff-space-mono);
+    font-size: var(--fz-caption);
+    line-height: 1.1;
+    color: var(--caption-color);
+}
+
+.nft-card__price {
+    font-family: var(--ff-space-mono);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.nft-card__bid-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nft-card__bid {
+    font-family: var(--ff-space-mono);
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+/*---------------------info card----------------------  */
+
+.info-card {
+    background-color: var(--secondary-color);
+    border-radius: 20px;
+
+    text-align: center;
+}
+
+.info-card__img {
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.info-card__title {
+    font-weight: 600;
+    line-height: 1.4;
+    font-size: var(--fz-h5);
+    margin-bottom: 10px;
+}
+
+.info-card__desc {
+    line-height: 1.4;
+    padding: 0 20px;
+    padding-bottom: 20px;
+}
+
+
+/* -------------------Subscribe Form------------------------- */
+
+.subscribe-form {
+    gap: 15px;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.subscribe-form__input {
+    padding-left: 20px;
+    color: var(--bc-color);
+}
+
+.subscribe-form__input::placeholder {
+    line-height: 1.4;
+    color: var(--bc-color);
+}
+
+.subscribe-form__btn{
+    font-size: 16px;
+    width: 100%;
+}
+
+
+
+
+@media (max-width: 900px){
+/* ---------------------subtitle----------------------- */
+
+    .subtitle{
+        font-size: var(--fz-h4);
+        line-height: 1.4;
+    }
+/* ----------------------------artist-card---------------------------- */
+    .artist-card{
+        display: flex;
+        align-items: center;
+        padding: 20px;
+        gap: 20px;
+        text-align: start;
+    }
+
+    .artist-card::before{
+        top: 13px;
+        left: 12px;
+    }
+
+    .artist-card__img{
+        padding-top: 0;
+        width: 60px;
+        height: 60px;
+    }
+
+    .artist-card__desc{
+        padding: 0;
+    }
+
+    .artist-card__subtitle{
+        margin-right: 0;
+    }
+
+/* ---------------------------category-card---------------------- */
+    
+    .categ-card__icon{
+        width:80px;
+        height: 80px;
+    }
+    
+    .categor-card__title {
+        font-size: 14px;
+        padding: 20px 20px 25px 20px;
+    }
+
+/*------------------------------info card--------------------------------  */
+    .info-card__img{
+        width: 160px;
+        height: 160px;
+    }
+
+    .info-card__title {
+        font-size: 16px;
+    }
+    
+    .info-card__desc {
+        font-size: 12px;
+    }
+
+/* --------------------------Subscribe Form--------------------------- */
+    .subscribe-form{
+        flex-direction: column;
+        background-color: transparent;
+    }
+
+    .subscribe-form__input{
+        padding: 12px 20px;
+        border-radius: 20px;
+        width: 100%;
+        border: 1px solid var(--caption-color);
+        background-color: white;
+        margin-bottom: 10px;
+    }
+
+    .subscribe-form__input:focus{
+        border: 1px solid var(--action-color);
+    }
+
+    .subscribe-form__btn{
+        justify-content: center;
+        padding: 12px 0;
+    }
+
+}
+
+@media (max-width: 600px){
+/* ---------------------subtitle----------------------- */
+
+    .subtitle{
+        font-size: var(--fz-h4);
+        line-height: 1.4;
+    }
+
+/*------------------info card---------------------  */
+    .info-card{
+        display: flex;
+        text-align: start;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .info-card__img{
+        width: 100px;
+        height: 100px;
+        padding-left: 20px;
+        margin-bottom: 0;
+    }
+
+    .info-card__title {
+        padding-top: 20px;
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .info-card__desc {
+        font-size: 12px;
+        padding-right: 20px;
+        padding-left: 0;
+        padding-bottom: 20px;
+    }
+/* --------------------------category-card----------------------------- */
+    .categor-card__title{
+        font-size: 14px;
+    }
+}

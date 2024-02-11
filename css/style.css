@@ -1,0 +1,836 @@
+@import url(./components.css);
+
+:root{
+    --bc-color: #2B2B2B;
+    --secondary-color: #3B3B3B;
+    --caption-color: #858584;
+    --action-color: #A259FF;
+
+    --ff-space-mono: 'Space Mono', monospace;
+
+    --fz-h1: 67px;
+    --fz-h2: 51px;
+    --fz-h3: 38px;
+    --fz-h4: 28px;
+    --fz-h5: 22px;
+    --fz-caption: 12px;
+}
+
+/* ------------------header----------------------- */
+
+.header{
+    padding-top: 20px;
+    margin-bottom: 80px;
+}
+
+.header__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__burger-btn{
+    display: none;
+    position: relative;
+    width: 24px;
+    height: 24px;
+    z-index: 2;
+}
+
+.header__burger-btn span{
+    background-color: white;
+    border-radius: 5px;
+
+    display: block;
+    position: absolute;
+    width: 12.75px;
+    height: 1.5px;
+
+    transition: opacity 0.3s, transform 0.3s, background-color 0.3s;
+    will-change: transform, opacity;
+}
+
+.header__burger-btn:hover span{
+    background-color: var(--action-color);
+}
+
+.header__burger-btn span:nth-child(1){
+    transform: translateY(-4.5px);
+}
+
+.header__burger-btn span:nth-child(2){
+    width: 18px;
+}
+
+.header__burger-btn span:nth-child(3){
+    transform: translateY(4.5px);
+}
+
+/* Крестик */
+
+.header.open .header__burger-btn span:nth-child(1){
+    transform: translateY(0) rotate(45deg);
+    width: 18px;
+}
+
+.header.open .header__burger-btn span:nth-child(2){
+    opacity: 0;
+}
+
+.header.open .header__burger-btn span:nth-child(3){
+    width: 18px;
+    transform: translateY(0) rotate(-45deg);
+}
+
+
+/* -----------------------HERO----------------------------- */
+
+.hero {
+    margin-bottom: 160px;
+}
+
+.hero__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: 
+    "title card"
+    "desc card"
+    "btn card"
+    "info card";
+} 
+
+
+.hero__title {
+    font-weight: 600;
+    font-size: var(--fz-h1);
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-align: left;
+
+    grid-area: title;
+}
+
+.hero__desc {
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+    margin-bottom: 30px;
+
+    grid-area: desc;
+}
+
+.hero__btn{
+    margin-bottom: 30px;  
+    width: 224px;  
+
+    grid-area: btn;
+}
+
+.hero__card {   
+    margin-left: 30px;
+    border-radius: 22px;
+    overflow: hidden;
+
+    grid-area: card;
+}
+
+.hero__img{
+    width: 100%;
+}
+
+.hero__card-body {
+    background-color: var(--secondary-color);
+    padding: 22px 20px;
+
+    border-bottom-left-radius:20px;
+    border-bottom-right-radius:20px;
+}
+
+.hero__card-title {
+    color: white;
+    font-weight: 600;
+    font-size: var(--fz-h5);
+    line-height: 1.4;
+
+    margin-bottom: 10px;
+}
+
+.hero__card-artist {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.hero__card-artist-img {
+    width: 24px;
+    height: 24px;
+}
+
+.hero__card-artist-name {
+    color: white;
+    line-height: 1.4;
+}
+
+.hero__info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+
+    grid-area: info;
+}
+
+.hero__statistics {
+    font-size: var(--fz-h4);
+    font-weight: 700;
+    font-family: var(--ff-space-mono);
+    line-height: 1.4;
+}
+
+.hero__subtitle {
+    font-size: 24px;
+    line-height: 1.6;
+}
+
+/* -----------------collection-------------------------- */
+
+.collection {
+    margin-bottom: 160px;
+}
+
+.subtitle__collection{
+    margin-bottom: 10px;
+}
+
+.collection__desc {
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+    margin-bottom: 60px;
+}
+
+.collection__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+
+/* -------------------------creators----------------------------- */
+.creators {
+    margin-bottom: 160px;
+}
+
+.subtitle__creators {
+    margin-bottom: 10px;
+}
+.creators__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+.creators__desc {
+    line-height: 1.6;
+    font-size: var(--fz-h5);
+}
+
+.creators__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.btn__creators_mb{
+    display: none;
+}
+
+/* --------------------------categories----------------------------------------- */
+.categories {
+    margin-bottom: 160px;
+}
+
+.categories__subtitle {
+    margin-bottom: 60px;
+}
+
+.categories__cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+
+/* ----------------------------descover---------------------------- */
+.descover {
+    margin-bottom: 80px;
+}
+
+.descover__subtitle{
+    margin-bottom: 10px;
+}
+
+.descover__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 60px;
+}
+
+.descover__desc {
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+}
+
+.descover__cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.descover__btn_mb{
+    display: none;
+}
+
+/* ---------------------event------------------------------ */
+
+.event{
+    background-image: url(./../img/event/img-bc.jpeg);
+
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+
+    margin-bottom: 80px;
+}
+
+.event_gr{
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180.00deg, rgba(162, 89, 255, 0),rgb(162, 89, 255) 100%);
+}
+
+.event__container {
+    position: relative;
+    z-index: 5;
+    padding-top: 360px;
+    padding-bottom: 60px;
+}
+
+.event__artist-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 12px 20px;
+    width: 150px;
+    border-radius: 20px;
+
+    background-color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.event___artist-name {
+    line-height: 1.4;
+}
+
+.event__subtitle {
+    margin-bottom: 30px;
+}
+
+.event__btn {
+    border: none;
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.event__btn:hover{
+    filter: brightness(90%);
+}
+
+.event__btn:active{
+    filter: brightness(80%);
+}
+
+/* ------------------------works------------------------- */
+.works {
+    margin-bottom: 120px;
+}
+
+.works__subtitle {
+    margin-bottom: 10px;
+}
+
+.works__desc {
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+    margin-bottom: 50px;
+}
+
+.works__cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* ---------------------join---------------------- */
+.join {
+    margin-bottom: 80px;
+}
+
+.join__container {
+    background-color: var(--secondary-color);
+    padding: 60px;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.join__img{
+    width: 100%;
+    max-width: 425px;
+
+    margin-right: 30px;
+}
+
+.join__content{
+    width: 100%;
+    max-width: 425px;
+}
+
+.join__subtitle {
+    margin-bottom: 10px;
+}
+
+.join__desc {
+    font-size: var(--fz-h5);
+    line-height: 1.6;
+
+    margin-bottom: 40px;
+}
+
+/* -------------------------footer------------------------------- */
+
+.footer {
+    background-color: var(--secondary-color);
+    padding: 40px 0;
+    color: #CCCCCC;
+}
+
+.footer__content {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+
+    margin-bottom: 30px;
+}
+
+.footer__desc {
+    line-height: 1.4;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    width: 238px;
+}
+
+.footer__community-title {
+    line-height: 1.4;
+}
+
+.footer__community-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.footer__explore-title {
+    font-size: var(--fz-h5);
+    font-family: var(--ff-space-mono);
+    font-weight: 700;
+    line-height: 1.6;
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.footer__explore-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer__explore-links a{
+    color: #CCCCCC;
+}
+
+.footer__digest-title {
+    font-size: var(--fz-h5);
+    font-family: var(--ff-space-mono);
+    font-weight: 700;
+    line-height: 1.6;
+    color: white;
+
+    margin-bottom: 25px;
+}
+
+.footer__digest-desc {
+    line-height: 1.4;
+    margin-bottom: 20px;
+}
+
+.footer__subscribe-form {
+    color: white;
+    max-width: 420px;
+}
+
+.footer__freely {
+    border-top: 1px solid #CCCCCC;
+}
+
+.footer__freely-desc {
+    margin-top: 20px;
+    font-size: 12px;
+    line-height: 1.1;
+}
+
+
+@media (max-width: 900px){
+/* ---------------header------------------ */
+    .logo__img{
+        width: 182px;
+        height: 24px;
+    }
+
+    .menu{
+        display: block;
+        position: absolute;
+        right: -180px;
+        top: 0;
+        width: 180px;
+
+        padding: 15px 10px 10px 10px;
+        background-color: var(--secondary-color);
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+
+        visibility: hidden;
+
+        transition: transform 0.3s, visibility 0.3s;
+    }
+
+    .header__burger-btn{
+        display: block;
+    }
+
+    .menu__list{
+        display: block;
+    }
+
+    .menu__link{
+        display: block;
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .menu__btn{
+        padding: 10px 0;
+        width: 100%;
+        justify-content: center;
+        font-size: 12px;
+    }
+
+    .header.open .menu{
+        transform: translateX(-100%);
+        visibility: visible;
+    }
+
+/* ----------------heRO------ */
+    .hero {
+        margin-bottom: 120px;
+    }
+
+    .hero__title {
+        font-size: var(--fz-h3);
+        line-height: 1.2;
+    }
+    .hero__desc {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    .hero__btn {
+        margin-bottom: 20px;
+    }
+    .hero__statistics {
+        font-size: var(--fz-h5);
+    }
+    .hero__subtitle {
+        font-size: 16px;
+        line-height: 1.2;
+    }
+
+/* -----------------collection-------------------------- */
+
+    .collection {
+        margin-bottom: 80px;
+    }
+
+    .collection__desc {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+    }
+
+    .collection__cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection__cards article:nth-child(3){
+        display: none;
+    }
+
+/* -------------------------creators----------------------------- */
+    .creators {
+        margin-bottom: 80px;
+    }
+    .creators__desc {
+        line-height: 1.4;
+        font-size: 16px;
+        width: 343px;
+    }
+
+    .creators__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .artist-card_mb{
+        display: none;
+    }
+    .artist-card_mb:nth-child(-n+6){
+        display: flex;
+    }
+
+/* --------------------------categories----------------------------------------- */
+    .categories {
+        margin-bottom: 80px;
+    }
+
+    .categories__subtitle {
+        margin-bottom: 40px;
+    }
+
+    .categories__cards {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+    }
+/* ----------------------------descover---------------------------- */
+
+    .descover__top {
+        margin-bottom: 40px;
+    }
+    
+    .descover__desc {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+    
+    .descover__cards{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .nft-card:last-child{
+        display: none;
+    }
+/* -------------------------event----------------------- */
+    .event{
+        margin-bottom: 40px;
+    }
+    .event__container {
+        padding-top: 200px;
+    }
+/* ------------------------works------------------------- */
+    .works {
+        margin-bottom: 80px;
+    }
+    .works__desc {
+        font-size: 16px;
+        line-height: 1.4;
+        margin-bottom: 40px;
+    }
+
+/* ---------------------join---------------------- */
+
+    .join__desc {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+/* -------------------------footer------------------------------- */
+
+
+    .footer__content {
+        flex-direction: column;
+        gap: 30px;
+        
+        padding: 0 30px;
+
+        margin-bottom: 50px;
+    }
+
+
+    .footer__desc {
+        margin-top: 20px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px){
+    /* header */
+    .header{
+        margin-bottom: 40px;
+    }
+    .menu{
+        right: -150px;
+        width: 150px;
+    }
+
+    .menu__btn{
+        padding: 5px 0;
+    }
+
+/* ----------------heRO------ */
+    .hero__content {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(5, auto);
+        grid-template-areas: 
+        "title"
+        "desc"
+        "card"
+        "btn"
+        "info";
+    } 
+    .hero__card{
+        margin-left: 0;
+        margin-bottom: 40px;
+    }
+    .hero__title {
+        font-size: var(--fz-h4);
+        margin-bottom: 10px;  
+    }
+    .hero__desc {
+        margin-bottom: 40px;
+    }
+    .hero__btn {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 40px;
+    }
+
+/* -----------------collection-------------------------- */
+
+    .collection__cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .collection__cards article:nth-child(2){
+        display: none;
+    }
+
+/* -------------------------creators----------------------------- */
+    .creators__desc {
+        width: 315px;
+    }
+
+    .btn__creators{
+        display: none;
+    }
+    
+    .creators__cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px;
+    }
+
+    .artist-card_mb:nth-child(6){
+        display: none;
+    }
+
+    .btn__creators_mb{
+        display: block;  
+        margin: 0 auto;
+        margin-top: 40px;
+    }
+/* --------------------------categories----------------------------------------- */
+    .categories {
+        margin-bottom: 80px;
+    }
+    
+    .categories__subtitle {
+        margin-bottom: 40px;
+    }
+    
+    .categories__cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+/* ----------------------------descover---------------------------- */
+
+    .descover {
+        margin-bottom: 60px;
+    }
+    
+    .descover__btn {
+        display: none;
+    }
+    
+    .descover__cards{
+        grid-template-columns: repeat(1, 1fr);
+        margin-bottom: 40px;
+    }
+
+    .nft-card:last-child{
+        display: block;
+    }
+    
+    .descover__btn_mb{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+/* -------------------------event----------------------- */
+    .event__container {
+        padding-top: 200px;
+    }
+/* ----------------------------works------------------------------- */
+    .works__cards {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+/* ---------------------join---------------------- */
+    .join {
+        margin-bottom: 40px;
+    }
+
+    .join__container {
+        background-color: var(--bc-color);
+        flex-direction: column;
+        padding: 0 15px;
+    }
+
+    .join__img{
+        margin-bottom: 30px;
+        margin-right: 0;
+    }
+}
